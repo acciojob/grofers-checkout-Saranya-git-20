@@ -9,10 +9,17 @@ const getSum = () => {
 	values.forEach(item =>{
 		sum += parseInt(item.textContent)
 	});
-  const totalCell = document.createElement('td');
-  totalCell.textContent = sum;
-  totalCell.style.fontWeight = 'bold';
-	document.body.appendChild(totalCell);
+	const totalrow = document.createElement('tr')
+	totalrow.setAttribute("id","ans")
+	const totallable = document.createElement('td');
+	totallable.textContent = "Total Price"
+    const totalCell = document.createElement('td');
+    totalCell.textContent = sum;
+	totalrow.appendChild(totallable);
+	totalrow.appendChild(totalCell)
+
+	const table =  document.querySelector('table');
+	table.appendChild(totalrow)
   
 };
 
